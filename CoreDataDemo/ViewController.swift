@@ -121,10 +121,17 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             let textField = alert.textFields![0]
             
             // TODO: Edit name property of person object
+            person.name = textField.text
             
             // TODO: Save the data
+            do {
+                try self.context.save()
+            } catch {
+                
+            }
             
             // TODO: Re-fetch the data
+            self.fetchPeople()
             
         }
         
