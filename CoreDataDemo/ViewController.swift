@@ -38,7 +38,12 @@ class ViewController: UIViewController {
         // Create a person
         var person = Person(context: self.context)
         person.name = "Maggie"
-        person.family = family
+//        // First way to specify a relationship
+//        person.family = family
+        
+        // Second way to specify a relationship
+        // Add person to family
+        family.addToPeople(person)
         
         // Save context
         do {
