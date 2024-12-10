@@ -97,7 +97,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let person = self.items![indexPath.row]
         
         cell.textLabel?.text = person.name
-//        cell.textLabell.text = "person.name"
         
         return cell
         
@@ -139,7 +138,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         // Create swipe action
         let action = UIContextualAction(style: .destructive, title: "Delete") { action, view, completionHandler in
+            
             // TODO: Which person to remove
+            let person = self.items![indexPath.row]
             
             // TODO: Remove the person
             
