@@ -38,8 +38,11 @@ class ViewController: UIViewController {
             
             // Set the filtering and sorting on the request
             // %@ is the wild card character
-            let pred = NSPredicate(format: "name CONTAINS %@", "Ted")
-            request.predicate = pred
+            // let pred = NSPredicate(format: "name CONTAINS %@", "Ted")
+            // request.predicate = pred
+            
+            let sort = NSSortDescriptor(key: "name", ascending: true)
+            request.sortDescriptors = [sort]
             
             self.items = try context.fetch(request)
             
