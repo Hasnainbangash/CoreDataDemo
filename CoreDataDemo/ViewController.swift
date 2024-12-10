@@ -146,8 +146,15 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             self.context.delete(personToRemove)
             
             // TODO: Save the data
+            do {
+                try self.context.save()
+            } catch {
+                
+            }
             
             // TODO: Re-fetch the data
+            self.fetchPeople()
+            
         }
         
         return UISwipeActionsConfiguration(actions: [action])
