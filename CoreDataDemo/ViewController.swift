@@ -96,8 +96,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         // TODO: Get person from array and set the label
         let person = self.items![indexPath.row]
         
-//        cell.textLabel?.text = person.name
-        cell.textLabell.text = "person.name"
+        cell.textLabel?.text = person.name
+//        cell.textLabell.text = "person.name"
         
         return cell
         
