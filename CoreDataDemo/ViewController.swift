@@ -140,9 +140,10 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let action = UIContextualAction(style: .destructive, title: "Delete") { action, view, completionHandler in
             
             // TODO: Which person to remove
-            let person = self.items![indexPath.row]
+            let personToRemove = self.items![indexPath.row]
             
             // TODO: Remove the person
+            self.context.delete(personToRemove)
             
             // TODO: Save the data
             
