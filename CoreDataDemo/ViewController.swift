@@ -37,7 +37,8 @@ class ViewController: UIViewController {
             let request = Person.fetchRequest() as NSFetchRequest<Person>
             
             // Set the filtering and sorting on the request
-            
+            let pred = NSPredicate(format: "name CONTAINS 'Ted'")
+            request.predicate = pred
             
             self.items = try context.fetch(request)
             
