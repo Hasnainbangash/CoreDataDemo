@@ -32,8 +32,12 @@ class ViewController: UIViewController {
     func relationshipDemo() {
         
         // Create a family
+        let family = Family(context: self.context)
+        family.name = "Abc Family"
         
         // Create a person
+        var person = Person(context: self.context)
+        person.name = "Maggie"
         
         // Save context
     }
