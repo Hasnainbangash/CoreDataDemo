@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
 
@@ -32,7 +33,13 @@ class ViewController: UIViewController {
         
         // Fetch the data from Core Data to display in the tableview
         do {
-            self.items = try context.fetch(Person.fetchRequest())
+            
+            let request = Person.fetchRequest() as NSFetchRequest<Person>
+            
+            // Set the filtering and sorting on the request
+            
+            
+            self.items = try context.fetch(request)
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()
