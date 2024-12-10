@@ -1,24 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_3" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CoreDataDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bad-cM-XkS">
+                                <rect key="frame" x="0.0" y="48" width="402" height="826"/>
+                                <subviews>
+                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H3r-fl-wMs">
+                                        <rect key="frame" x="0.0" y="0.0" width="402" height="44"/>
+                                        <items>
+                                            <navigationItem title="Title" id="6PA-qZ-F2U">
+                                                <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="sCJ-Mi-qXi">
+                                                    <connections>
+                                                        <action selector="addTapped:" destination="BYZ-38-t0r" id="wm6-4r-UHh"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="s85-uZ-sPk">
+                                        <rect key="frame" x="0.0" y="44" width="402" height="782"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PersonCell" id="iF6-uX-xet" customClass="PersonCell" customModule="CoreDataDemo" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="50" width="402" height="55.333332061767578"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iF6-uX-xet" id="UAl-UK-suA">
+                                                    <rect key="frame" x="0.0" y="0.0" width="402" height="55.333332061767578"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Apx-fe-b3r">
+                                                            <rect key="frame" x="20.000000000000004" y="17" width="41.333333333333343" height="20.666666666666671"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Apx-fe-b3r" secondAttribute="trailing" id="5c2-Eo-tTW"/>
+                                                        <constraint firstItem="Apx-fe-b3r" firstAttribute="top" secondItem="UAl-UK-suA" secondAttribute="topMargin" constant="3" id="cQr-yf-8NJ"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="Apx-fe-b3r" secondAttribute="bottom" constant="3.6699999999999999" id="lAv-WK-Q6H"/>
+                                                        <constraint firstItem="Apx-fe-b3r" firstAttribute="leading" secondItem="UAl-UK-suA" secondAttribute="leadingMargin" id="zZa-7n-20S"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="textLabell" destination="Apx-fe-b3r" id="RfD-zT-bHZ"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bad-cM-XkS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="48" id="B0i-Z5-JnA"/>
+                            <constraint firstItem="bad-cM-XkS" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="KPU-iM-0c7"/>
+                            <constraint firstItem="bad-cM-XkS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="P8J-62-U47"/>
+                            <constraint firstAttribute="bottom" secondItem="bad-cM-XkS" secondAttribute="bottom" id="a0S-4v-9KP"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="s85-uZ-sPk" id="2vT-aA-btL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="129.85074626865671" y="2.7459954233409607"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
