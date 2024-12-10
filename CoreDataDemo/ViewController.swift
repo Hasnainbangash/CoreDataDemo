@@ -68,8 +68,8 @@ class ViewController: UIViewController {
                 
             }
             
-            // TODO: Re-fetch the data
-            
+            // Re-fetch the data
+            self.fetchPeople()
         }
         
         // Add button
