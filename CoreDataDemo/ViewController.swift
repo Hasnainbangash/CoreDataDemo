@@ -56,6 +56,10 @@ class ViewController: UIViewController {
             let textField = alert.textFields![0]
             
             // TODO: Create a person object
+            let newPerson = Person(context: self.context)
+            newPerson.name = textField.text
+            newPerson.age = 20
+            newPerson.gender = "Male"
             
             // TODO: Save the data
             
