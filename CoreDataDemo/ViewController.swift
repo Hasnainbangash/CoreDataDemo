@@ -91,7 +91,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PersonCell", for: indexPath) as! PersonCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PersonCell", for: indexPath)
         
         // TODO: Get person from array and set the label
         let person = self.items![indexPath.row]
