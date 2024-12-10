@@ -52,7 +52,7 @@ class ViewController: UIViewController {
         // Configure button handler
         let submitButton = UIAlertAction(title: "Add", style: .default) { (action) in
             
-            // Get the textfield for the alert
+            // TODO: Get the textfield for the alert
             let textField = alert.textFields![0]
             
             // TODO: Create a person object
@@ -61,14 +61,14 @@ class ViewController: UIViewController {
             newPerson.age = 20
             newPerson.gender = "Male"
             
-            // Save the data
+            // TODO: Save the data
             do {
                 try self.context.save()
             } catch {
                 
             }
             
-            // Re-fetch the data
+            // TODO: Re-fetch the data
             self.fetchPeople()
         }
         
@@ -117,7 +117,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         // Configure button handler
         let saveButton = UIAlertAction(title: "Save", style: .default) { (action) in
             
-            // Get the textfield for the alert
+            // TODO: Get the textfield for the alert
             let textField = alert.textFields![0]
             
             // TODO: Edit name property of person object
