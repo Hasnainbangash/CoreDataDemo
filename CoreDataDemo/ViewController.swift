@@ -61,7 +61,12 @@ class ViewController: UIViewController {
             newPerson.age = 20
             newPerson.gender = "Male"
             
-            // TODO: Save the data
+            // Save the data
+            do {
+                try self.context.save()
+            } catch {
+                
+            }
             
             // TODO: Re-fetch the data
             
