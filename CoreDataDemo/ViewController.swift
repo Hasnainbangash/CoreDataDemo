@@ -38,8 +38,14 @@ class ViewController: UIViewController {
         // Create a person
         var person = Person(context: self.context)
         person.name = "Maggie"
+        person.family = family
         
         // Save context
+        do {
+            try self.context.save()
+        } catch {
+            
+        }
     }
     
     func fetchPeople() {
